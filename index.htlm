@@ -121,10 +121,11 @@ font-size:18px;
 
 <div class="page" id="page5">
 <h1>Photo Section 📸</h1>
-
-<img src="Snapchat-1639050158.jpg"
-     alt="Shaheer"
-     style="width:220px;height:220px;border-radius:20px;object-fit:cover;">
+<div class="photo-box">
+    <img src="Snapchat-1639050158.jpg"
+         alt="Shaheer"
+         style="width:100%;height:100%;object-fit:cover;border-radius:20px;">
+</div>
 
 <p>Our beautiful memories together 💙</p>
 
@@ -203,4 +204,5 @@ heart.className="heart";
 heart.innerHTML="💙";
 heart.style.left=Math.random()*100+"vw";
 heart.style.animationDuration=(5+Math.random()*5)+"s";
-document.body
+document.body.appendChild(heart);
+}

@@ -122,11 +122,11 @@ font-size:18px;
 <div class="page" id="page5">
 <h1>Photo Section 📸</h1>
 
-<div class="photo-box">
-Add Shaheer's Photo Here
-</div>
+<img src="Snapchat-1639050158.jpg"
+     alt="Shaheer"
+     style="width:220px;height:220px;border-radius:20px;object-fit:cover;">
 
-<p>Photos can be added later 💙</p>
+<p>Our beautiful memories together 💙</p>
 
 <button onclick="nextPage(6)">Final Surprise 🎁</button>
 </div>

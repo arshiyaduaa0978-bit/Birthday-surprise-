@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Precious One 💙</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0b1f4d,#1e88e5);
+height:100vh;
+overflow:hidden;
+color:white;
+}
+
+.page{
+display:none;
+height:100vh;
+width:100%;
+padding:30px;
+text-align:center;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.active{
+display:flex;
+}
+
+h1{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+p{
+font-size:1.1rem;
+line-height:1.8;
+max-width:700px;
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#1565c0;
+font-size:1rem;
+font-weight:bold;
+cursor:pointer;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 8s linear infinite;
+opacity:0.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100px);
+}
+}
+
+#message{
+max-width:800px;
+}
+
+.photo-box{
+width:220px;
+height:220px;
+border:3px dashed white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:20px;
+margin:20px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<div class="page active" id="page1">
+<h1>Hey Paglu 💙</h1>
+<p>I made something for you...</p>
+<button onclick="nextPage(2)">Open ❤️</button>
+</div>
+
+<div class="page" id="page2">
+<h1>I have a little surprise for you, precious one ✨</h1>
+<button onclick="nextPage(3)">Continue 💌</button>
+</div>
+
+<div class="page" id="page3">
+<p id="message"></p>
+<button onclick="nextPage(4)">One More Thing 👀</button>
+</div>
+
+<div class="page" id="page4">
+<h1>Question 😌</h1>
+<p>Are you ready for your surprise?</p>
+<button onclick="nextPage(5)">Yes 💙</button>
+<button onclick="alert('No option is unavailable 😆')">No 😏</button>
+</div>
+
+<div class="page" id="page5">
+<h1>Photo Section 📸</h1>
+
+<div class="photo-box">
+Add Shaheer's Photo Here
+</div>
+
+<p>Photos can be added later 💙</p>
+
+<button onclick="nextPage(6)">Final Surprise 🎁</button>
+</div>
+
+<div class="page" id="page6">
+<h1>🎂 Happy Birthday Shaheer 🎂</h1>
+
+<p>
+Thank you for coming into my life.
+You are the most special person to me.
+
+I am very grateful to have someone like you.
+
+Sometimes you annoy me but okay 😆
+
+Sometimes you make me feel better too.
+
+I will forgive your mistakes,
+but some are a bit too much to be forgiven 😂
+
+So sorry for that.
+
+Let's leave it aside and celebrate your special day.
+
+I wish you a very very Happy Birthday 💙🎉
+</p>
+
+<h2 style="margin-top:30px;">
+Forever your Paglu 💙
+</h2>
+</div>
+
+<script>
+
+function nextPage(num){
+document.querySelectorAll('.page').forEach(p=>{
+p.classList.remove('active');
+});
+document.getElementById('page'+num).classList.add('active');
+}
+
+const text = `
+Thank you for coming into my life.
+You are the most special person to me.
+
+I am very grateful to have someone like you.
+
+Sometimes you annoy me but okay.
+
+Sometimes you make me feel better too.
+
+I will forgive your mistakes but some are too much to be forgiven 😆
+
+So sorry for that.
+
+Let's leave it aside and celebrate your special day.
+`;
+
+let i=0;
+
+function typeWriter(){
+if(i<text.length){
+document.getElementById("message").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,35);
+}
+}
+
+setTimeout(typeWriter,1500);
+
+for(let i=0;i<25;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💙";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+document.body
